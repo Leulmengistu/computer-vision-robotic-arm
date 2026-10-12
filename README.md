@@ -20,12 +20,12 @@ Recycling plants still sort much of their waste by hand, which is slow, tiring a
 
 ```mermaid
 flowchart LR
-    CAM[Camera<br/>640×480] --> DET[Object detector<br/>on a PC]
-    DET --> LOC[Bounding-box centre<br/>pixels → cm]
-    LOC --> TF[Camera frame →<br/>robot-base frame]
-    TF --> IK[Base angle<br/>θ = arctan(Yb / Xb)]
-    DET --> HSV[Cap colour<br/>HSV]
-    IK --> MQTT[MQTT publish<br/>angle + colour]
+    CAM["Camera<br/>640×480"] --> DET["Object detector<br/>on a PC"]
+    DET --> LOC["Bounding-box centre<br/>pixels → cm"]
+    LOC --> TF["Camera frame →<br/>robot-base frame"]
+    TF --> IK["Base angle<br/>θ = arctan(Yb / Xb)"]
+    DET --> HSV["Cap colour<br/>HSV"]
+    IK --> MQTT["MQTT publish<br/>angle + colour"]
     HSV --> MQTT
     MQTT --> EV3[EV3 brick<br/>pick-and-place]
 ```
